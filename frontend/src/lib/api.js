@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://127.0.0.1:8000", // FastAPI backend
+  baseURL:  "https://educhain-pedagogy.onrender.com", // FastAPI backend
 });
 
 export const getPedagogies = async () => {
