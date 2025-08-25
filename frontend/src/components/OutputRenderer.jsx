@@ -565,10 +565,165 @@ function BloomsTaxonomy({ content, theme }) {
   );
 }
 
+// function PeerLearning({ content, theme }) {
+//   if (!content) {
+//     return (
+//       <div className={`rounded-xl p-8 border ${theme.border} ${theme.cardBg} text-center`}>
+//         <div className="text-4xl mb-4">🤝</div>
+//         <h3 className={`text-xl font-semibold mb-2 ${theme.sectionTitle}`}>
+//           Peer Learning Content
+//         </h3>
+//         <p className="text-gray-400">Content is being generated...</p>
+//       </div>
+//     );
+//   }
+
+//   const topic = content.topic || "Topic";
+//   const groupSize = content.group_size || "Not specified";
+//   const collaborationType = content.collaboration_type || "Not specified";
+//   const skillDiversity = content.skill_diversity || "Not specified";
+
+//   return (
+//     <div className="space-y-6">
+//       {/* Header Section */}
+//       <div className={`rounded-xl p-6 border ${theme.border} ${theme.cardBg} relative overflow-hidden`}>
+//         <div className="absolute inset-0 opacity-5">
+//           <div className="absolute inset-0" style={{
+//             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M30 30c0 16.569-13.431 30-30 30s-30-13.431-30-30 13.431-30 30-30 30 13.431 30 30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+//           }}></div>
+//         </div>
+//         <div className="relative">
+//           <div className="flex items-center gap-3 mb-4">
+//             <div className="text-3xl">🤝</div>
+//             <div>
+//               <h1 className={`text-2xl font-bold ${theme.accentText}`}>
+//                 Peer Learning: {topic}
+//               </h1>
+//               <div className="flex gap-4 mt-2 text-sm">
+//                 <span className={`px-3 py-1 rounded-full ${theme.chip}`}>
+//                   Group: {groupSize}
+//                 </span>
+//                 <span className={`px-3 py-1 rounded-full ${theme.chip}`}>
+//                   Type: {collaborationType}
+//                 </span>
+//                 <span className={`px-3 py-1 rounded-full ${theme.chip}`}>
+//                   Skills: {skillDiversity}
+//                 </span>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Learning Activities */}
+//       {content.learning_activities && content.learning_activities.length > 0 && (
+//         <div className={`rounded-xl border ${theme.border} ${theme.cardBg} overflow-hidden`}>
+//           <div className={`p-4 bg-gradient-to-r ${theme.headerBg} border-b ${theme.border}`}>
+//             <h3 className={`text-lg font-semibold ${theme.accentText} flex items-center gap-2`}>
+//               <span className="w-2 h-2 rounded-full bg-blue-400"></span>
+//               Collaborative Learning Activities
+//             </h3>
+//           </div>
+//           <div className="p-6 space-y-4">
+//             {content.learning_activities.map((activity, index) => (
+//               <div key={index} className="flex items-start gap-3 p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+//                 <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${theme.chip}`}>
+//                   {index + 1}
+//                 </div>
+//                 <div className="flex-1">
+//                   <h4 className={`font-semibold ${theme.sectionTitle} mb-2`}>
+//                     {activity.title || `Activity ${index + 1}`}
+//                   </h4>
+//                   {activity.description && (
+//                     <p className="text-gray-200 text-sm leading-6 mb-3">{activity.description}</p>
+//                   )}
+//                   {activity.steps && activity.steps.length > 0 && (
+//                     <div className="space-y-2">
+//                       <h5 className="text-xs font-medium text-gray-400 uppercase tracking-wide">Steps:</h5>
+//                       <ol className="list-decimal list-inside space-y-1 text-sm text-gray-300">
+//                         {activity.steps.map((step, stepIndex) => (
+//                           <li key={stepIndex}>{step}</li>
+//                         ))}
+//                       </ol>
+//                     </div>
+//                   )}
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       )}
+
+//       {/* Group Formation Strategies */}
+//       {content.group_formation && (
+//         <div className={`rounded-xl border ${theme.border} ${theme.cardBg} overflow-hidden`}>
+//           <div className={`p-4 bg-gradient-to-r ${theme.headerBg} border-b ${theme.border}`}>
+//             <h3 className={`text-lg font-semibold ${theme.accentText} flex items-center gap-2`}>
+//               <span className="w-2 h-2 rounded-full bg-indigo-400"></span>
+//               Group Formation Strategies
+//             </h3>
+//           </div>
+//           <div className="p-6">
+//             <p className="text-gray-200 leading-6">{content.group_formation}</p>
+//           </div>
+//         </div>
+//       )}
+
+//       {/* Collaboration Guidelines */}
+//       {content.collaboration_guidelines && (
+//         <div className={`rounded-xl border ${theme.border} ${theme.cardBg} overflow-hidden`}>
+//           <div className={`p-4 bg-gradient-to-r ${theme.headerBg} border-b ${theme.border}`}>
+//             <h3 className={`text-lg font-semibold ${theme.accentText} flex items-center gap-2`}>
+//               <span className="w-2 h-2 rounded-full bg-purple-400"></span>
+//               Collaboration Guidelines
+//             </h3>
+//           </div>
+//           <div className="p-6">
+//             <p className="text-gray-200 leading-6">{content.collaboration_guidelines}</p>
+//           </div>
+//         </div>
+//       )}
+
+//       {/* Assessment Methods */}
+//       {content.assessment_methods && content.assessment_methods.length > 0 && (
+//         <div className={`rounded-xl border ${theme.border} ${theme.cardBg} overflow-hidden`}>
+//           <div className={`p-4 bg-gradient-to-r ${theme.headerBg} border-b ${theme.border}`}>
+//             <h3 className={`text-lg font-semibold ${theme.accentText} flex items-center gap-2`}>
+//               <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
+//               Assessment Methods
+//             </h3>
+//           </div>
+//           <div className="p-6 space-y-3">
+//             {content.assessment_methods.map((method, index) => (
+//               <div key={index} className="flex items-start gap-3 p-3 rounded-lg bg-white/5">
+//                 <div className="w-2 h-2 rounded-full bg-cyan-400 flex-shrink-0 mt-2"></div>
+//                 <p className="text-sm text-gray-200">{method}</p>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       )}
+
+//       {/* Footer */}
+//       <div className={`rounded-xl p-6 bg-gradient-to-br from-gray-900/50 to-black/50 border border-gray-700/50 text-center`}>
+//         <div className="flex items-center justify-center gap-3 mb-3">
+//           <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></div>
+//           <span className="text-sm text-gray-400">Collaborative Learning Framework</span>
+//           <div className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></div>
+//         </div>
+//         <p className="text-xs text-gray-500">
+//           Learning together through structured collaboration and peer support
+//         </p>
+//       </div>
+//     </div>
+//   );
+// }
 function PeerLearning({ content, theme }) {
   if (!content) {
     return (
-      <div className={`rounded-xl p-8 border ${theme.border} ${theme.cardBg} text-center`}>
+      <div
+        className={`rounded-xl p-8 border ${theme.border} ${theme.cardBg} text-center`}
+      >
         <div className="text-4xl mb-4">🤝</div>
         <h3 className={`text-xl font-semibold mb-2 ${theme.sectionTitle}`}>
           Peer Learning Content
@@ -579,145 +734,171 @@ function PeerLearning({ content, theme }) {
   }
 
   const topic = content.topic || "Topic";
-  const groupSize = content.group_size || "Not specified";
-  const collaborationType = content.collaboration_type || "Not specified";
-  const skillDiversity = content.skill_diversity || "Not specified";
+
+  const collabStructures = content.collaboration_structures || [];
+  const accountability = content.accountability_measures || [];
+  const communication = content.communication_protocols || [];
+  const facilitation = content.facilitation_guidelines || null;
+  const groupFormation = content.group_formation_strategy || null;
 
   return (
     <div className="space-y-6">
-      {/* Header Section */}
-      <div className={`rounded-xl p-6 border ${theme.border} ${theme.cardBg} relative overflow-hidden`}>
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M30 30c0 16.569-13.431 30-30 30s-30-13.431-30-30 13.431-30 30-30 30 13.431 30 30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}></div>
-        </div>
-        <div className="relative">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="text-3xl">🤝</div>
-            <div>
-              <h1 className={`text-2xl font-bold ${theme.accentText}`}>
-                Peer Learning: {topic}
-              </h1>
-              <div className="flex gap-4 mt-2 text-sm">
-                <span className={`px-3 py-1 rounded-full ${theme.chip}`}>
-                  Group: {groupSize}
-                </span>
-                <span className={`px-3 py-1 rounded-full ${theme.chip}`}>
-                  Type: {collaborationType}
-                </span>
-                <span className={`px-3 py-1 rounded-full ${theme.chip}`}>
-                  Skills: {skillDiversity}
-                </span>
-              </div>
-            </div>
-          </div>
+      {/* Header */}
+      <div
+        className={`rounded-xl p-6 border ${theme.border} ${theme.cardBg} relative`}
+      >
+        <div className="flex items-center gap-3 mb-2">
+          <div className="text-3xl">🤝</div>
+          <h1 className={`text-2xl font-bold ${theme.accentText}`}>
+            Peer Learning: {topic}
+          </h1>
         </div>
       </div>
 
-      {/* Learning Activities */}
-      {content.learning_activities && content.learning_activities.length > 0 && (
-        <div className={`rounded-xl border ${theme.border} ${theme.cardBg} overflow-hidden`}>
-          <div className={`p-4 bg-gradient-to-r ${theme.headerBg} border-b ${theme.border}`}>
-            <h3 className={`text-lg font-semibold ${theme.accentText} flex items-center gap-2`}>
-              <span className="w-2 h-2 rounded-full bg-blue-400"></span>
-              Collaborative Learning Activities
+      {/* Collaboration Structures */}
+      {collabStructures.length > 0 && (
+        <div className={`rounded-xl border ${theme.border} ${theme.cardBg}`}>
+          <div
+            className={`p-4 bg-gradient-to-r ${theme.headerBg} border-b ${theme.border}`}
+          >
+            <h3 className={`text-lg font-semibold ${theme.accentText}`}>
+              Collaboration Structures
             </h3>
           </div>
           <div className="p-6 space-y-4">
-            {content.learning_activities.map((activity, index) => (
-              <div key={index} className="flex items-start gap-3 p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${theme.chip}`}>
-                  {index + 1}
-                </div>
-                <div className="flex-1">
-                  <h4 className={`font-semibold ${theme.sectionTitle} mb-2`}>
-                    {activity.title || `Activity ${index + 1}`}
-                  </h4>
-                  {activity.description && (
-                    <p className="text-gray-200 text-sm leading-6 mb-3">{activity.description}</p>
+            {collabStructures.map((s, i) => (
+              <div
+                key={i}
+                className="p-4 rounded-lg bg-white/5 hover:bg-white/10 transition"
+              >
+                <h4 className={`font-semibold ${theme.sectionTitle}`}>
+                  {s.structure_name || `Structure ${i + 1}`}
+                </h4>
+                {s.process_description && (
+                  <p className="text-gray-200 text-sm mb-2">
+                    {s.process_description}
+                  </p>
+                )}
+                {s.detailed_content && (
+                  <p className="text-gray-300 text-sm mb-2">
+                    {s.detailed_content}
+                  </p>
+                )}
+                {Array.isArray(s.roles_and_responsibilities) &&
+                  s.roles_and_responsibilities.length > 0 && (
+                    <div className="mt-2">
+                      <h5 className="text-xs text-gray-400 uppercase mb-1">
+                        Roles & Responsibilities
+                      </h5>
+                      <ul className="list-disc list-inside text-sm text-gray-300">
+                        {s.roles_and_responsibilities.map((r, ri) => (
+                          <li key={ri}>{r}</li>
+                        ))}
+                      </ul>
+                    </div>
                   )}
-                  {activity.steps && activity.steps.length > 0 && (
-                    <div className="space-y-2">
-                      <h5 className="text-xs font-medium text-gray-400 uppercase tracking-wide">Steps:</h5>
-                      <ol className="list-decimal list-inside space-y-1 text-sm text-gray-300">
-                        {activity.steps.map((step, stepIndex) => (
-                          <li key={stepIndex}>{step}</li>
+                {Array.isArray(s.step_by_step_process) &&
+                  s.step_by_step_process.length > 0 && (
+                    <div className="mt-2">
+                      <h5 className="text-xs text-gray-400 uppercase mb-1">
+                        Steps
+                      </h5>
+                      <ol className="list-decimal list-inside text-sm text-gray-300">
+                        {s.step_by_step_process.map((st, si) => (
+                          <li key={si}>{st}</li>
                         ))}
                       </ol>
                     </div>
                   )}
-                </div>
+                {s.assessment_method && (
+                  <p className="text-sm text-gray-400 mt-2">
+                    Assessment: {s.assessment_method}
+                  </p>
+                )}
               </div>
             ))}
           </div>
         </div>
       )}
 
-      {/* Group Formation Strategies */}
-      {content.group_formation && (
-        <div className={`rounded-xl border ${theme.border} ${theme.cardBg} overflow-hidden`}>
-          <div className={`p-4 bg-gradient-to-r ${theme.headerBg} border-b ${theme.border}`}>
-            <h3 className={`text-lg font-semibold ${theme.accentText} flex items-center gap-2`}>
-              <span className="w-2 h-2 rounded-full bg-indigo-400"></span>
-              Group Formation Strategies
+      {/* Accountability Measures */}
+      {accountability.length > 0 && (
+        <div className={`rounded-xl border ${theme.border} ${theme.cardBg}`}>
+          <div
+            className={`p-4 bg-gradient-to-r ${theme.headerBg} border-b ${theme.border}`}
+          >
+            <h3 className={`text-lg font-semibold ${theme.accentText}`}>
+              Accountability Measures
             </h3>
           </div>
-          <div className="p-6">
-            <p className="text-gray-200 leading-6">{content.group_formation}</p>
-          </div>
-        </div>
-      )}
-
-      {/* Collaboration Guidelines */}
-      {content.collaboration_guidelines && (
-        <div className={`rounded-xl border ${theme.border} ${theme.cardBg} overflow-hidden`}>
-          <div className={`p-4 bg-gradient-to-r ${theme.headerBg} border-b ${theme.border}`}>
-            <h3 className={`text-lg font-semibold ${theme.accentText} flex items-center gap-2`}>
-              <span className="w-2 h-2 rounded-full bg-purple-400"></span>
-              Collaboration Guidelines
-            </h3>
-          </div>
-          <div className="p-6">
-            <p className="text-gray-200 leading-6">{content.collaboration_guidelines}</p>
-          </div>
-        </div>
-      )}
-
-      {/* Assessment Methods */}
-      {content.assessment_methods && content.assessment_methods.length > 0 && (
-        <div className={`rounded-xl border ${theme.border} ${theme.cardBg} overflow-hidden`}>
-          <div className={`p-4 bg-gradient-to-r ${theme.headerBg} border-b ${theme.border}`}>
-            <h3 className={`text-lg font-semibold ${theme.accentText} flex items-center gap-2`}>
-              <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
-              Assessment Methods
-            </h3>
-          </div>
-          <div className="p-6 space-y-3">
-            {content.assessment_methods.map((method, index) => (
-              <div key={index} className="flex items-start gap-3 p-3 rounded-lg bg-white/5">
-                <div className="w-2 h-2 rounded-full bg-cyan-400 flex-shrink-0 mt-2"></div>
-                <p className="text-sm text-gray-200">{method}</p>
-              </div>
+          <ul className="p-6 space-y-2 text-sm text-gray-200">
+            {accountability.map((m, i) => (
+              <li key={i}>• {m}</li>
             ))}
+          </ul>
+        </div>
+      )}
+
+      {/* Communication Protocols */}
+      {communication.length > 0 && (
+        <div className={`rounded-xl border ${theme.border} ${theme.cardBg}`}>
+          <div
+            className={`p-4 bg-gradient-to-r ${theme.headerBg} border-b ${theme.border}`}
+          >
+            <h3 className={`text-lg font-semibold ${theme.accentText}`}>
+              Communication Protocols
+            </h3>
           </div>
+          <ul className="p-6 space-y-2 text-sm text-gray-200">
+            {communication.map((c, i) => (
+              <li key={i}>• {c}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {/* Facilitation Guidelines */}
+      {facilitation && (
+        <div className={`rounded-xl border ${theme.border} ${theme.cardBg}`}>
+          <div
+            className={`p-4 bg-gradient-to-r ${theme.headerBg} border-b ${theme.border}`}
+          >
+            <h3 className={`text-lg font-semibold ${theme.accentText}`}>
+              Facilitation Guidelines
+            </h3>
+          </div>
+          <div className="p-6 text-gray-200">{facilitation}</div>
+        </div>
+      )}
+
+      {/* Group Formation Strategy */}
+      {groupFormation && (
+        <div className={`rounded-xl border ${theme.border} ${theme.cardBg}`}>
+          <div
+            className={`p-4 bg-gradient-to-r ${theme.headerBg} border-b ${theme.border}`}
+          >
+            <h3 className={`text-lg font-semibold ${theme.accentText}`}>
+              Group Formation Strategy
+            </h3>
+          </div>
+          <div className="p-6 text-gray-200">{groupFormation}</div>
         </div>
       )}
 
       {/* Footer */}
-      <div className={`rounded-xl p-6 bg-gradient-to-br from-gray-900/50 to-black/50 border border-gray-700/50 text-center`}>
-        <div className="flex items-center justify-center gap-3 mb-3">
-          <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></div>
-          <span className="text-sm text-gray-400">Collaborative Learning Framework</span>
-          <div className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></div>
-        </div>
-        <p className="text-xs text-gray-500">
-          Learning together through structured collaboration and peer support
-        </p>
+      <div
+        className={`rounded-xl p-6 bg-gradient-to-br from-gray-900/50 to-black/50 border border-gray-700/50 text-center`}
+      >
+        <span className="text-sm text-gray-400">
+          Collaborative Learning Framework
+        </span>
       </div>
     </div>
   );
 }
+
+
+
 
 function Constructivist({ content, theme }) {
   if (!content) {
