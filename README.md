@@ -2,10 +2,10 @@
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3.13+-3776ab.svg)](https://www.python.org/downloads/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-Next.js-3178c6.svg)](https://nextjs.org/docs)
+[![JavaScript](https://img.shields.io/badge/TypeScript-Next.js-3178c6.svg)](https://nextjs.org/docs)
 [![FastAPI](https://img.shields.io/badge/-FastAPI-009485.svg?logo=fastapi)](https://fastapi.tiangolo.com)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4-06b6d4.svg)](https://tailwindcss.com)
-[![Render](https://img.shields.io/badge/🚀-Live_Demo-black.svg)](https://educhain-pedagogy.onrender.com)
+
 
 Generate tailored, style-specific learning experiences across 8 pedagogical approaches—powered by Educhain + GPT-4o.
 
